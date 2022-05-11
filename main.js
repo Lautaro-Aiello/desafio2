@@ -3,42 +3,38 @@ inicio()
 
 function inicio(){
     const inicio = prompt(`Elija una opcion por favor:
-                                    Inicio
-                                    Fin`) 
+                                    INICIO
+                                    FIN`).toUpperCase() 
+    const fin = "FIN"                                
 
-    while(inicio!=="Fin")
+    while(inicio!=fin)
     {
         datosPasajero()  
     }
-
-} 
+}
+    
 
 function datosPasajero() {
     const nombre = prompt("Ingrese su nombre")
     const apellido = prompt("Ingrese su apellido")
     alert(`Bienvenido ${nombre} ${apellido}`)
-    const hora = Number(prompt("Introduzcas su hora de ingreso")) 
+    const hora = Number(prompt("Introduzca su hora de ingreso. Se admiten unicamenten caracteres numericos")) 
     let vuelo = prompt(`Ingrese su destino por favor:
-                                Madrid
-                                China
-                                Argentina`) 
-                             
-    if(vuelo == "Madrid"){
+                                MADRID
+                                CHINA
+                                ARGENTINA`).toUpperCase()
+    
+ 
+    if(vuelo == "MADRID"){
         verificarVueloM(hora)
     }
-    else if( vuelo == "China"){
+    else if( vuelo == "CHINA"){
         verificarVueloC(hora)
     }  
-    else if( vuelo == "Argentina"){
+    else if( vuelo == "ARGENTINA"){
         verificarVueloA(hora)
     }
-    else if(!isNaN(hora))
-    {
-        alert("Ingrese los caracteres correctos")
-    }
-    else{
-        alert("ERROR. Destino incorrecto")
-    }             
+    inicio()
 }    
 
 function verificarVueloM(horaVuelo){
